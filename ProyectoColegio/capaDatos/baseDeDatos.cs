@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 
 namespace ProyectoColegio
@@ -22,9 +23,9 @@ namespace ProyectoColegio
         public BaseDeDatos()
         {
             //pc de mesa
-            conexion = new SqlConnection("server=SUDO-DESKTOP\\SQLEXPRESS;database=SistemaColegio; integrated security=true");
+            conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["ColegioDB"].ConnectionString);
             //laptop
-            //conexion = new SqlConnection("server=DESKTOP-SO23BMP\\SQLEXPRESS;database=SistemaColegio; integrated security=true");
+            //conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["ColegioDB"].ConnectionString);
 
         }
 

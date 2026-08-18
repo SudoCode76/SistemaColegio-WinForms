@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace CapaDeDatos
 {
     internal class CD_Conexion
     {
-        private SqlConnection Conexion = new SqlConnection("Server=Oliver; DataBase=sistemacolegio; Integrated Security=true");
+        private SqlConnection Conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["ColegioDB"].ConnectionString);
 
         public SqlConnection AbrirConexion()
         {
